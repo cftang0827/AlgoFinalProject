@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 
 using namespace std;
 typedef vector<string> Data;
@@ -21,12 +22,12 @@ string alpha, beta, omega;
 int main()
 {
 	getData();
-	// sortDataList(list);
+	sortDataList(list);
 	for(int i = 0;i<list.size();i++)
 	{
 		for(int j=0;j<list[i].size();j++)
 		{
-			cout<<list[i][j]<<" ";
+			cout<<setw(5)<<list[i][j]<<" ";
 		}
 		cout<<endl;
 	}
@@ -39,45 +40,33 @@ int main()
 
 
 
-
+//get data from test.txt to DataList datastructure
 void getData()
 {
 	fstream fs ("test.txt" ,fstream::in);
-	//cout<<"asdf"<<endl;
 	string line;
 	
 	while(getline(fs,line))
 	{	
-		//cout<<"1234"<<endl;
 		int a = line[0];
 		string num;
 		num.clear();
-		// num.push_back(line[0]);
 		Data d;
 		d.clear();
-		cout<<"line : "<<line<<endl;
 		if(a>=48 && a<=57)
 		{
-			// num.push_back(line[0]);
 			for(int i=0; i< line.size(); i++)
 			{
-				// cout<<"i = "<<i<<endl;
-				// cout<<"line[i] = "<<line[i]<<endl;
-			//	cout<<"line.size() "<<line.size()<<endl;
 				if((int)line[i]>=48 && (int)line[i]<=57 && i < line.size()-1)
 				{
-			//		cout<<"a"<<endl;
 					num.push_back(line[i]);
 				}else if((int)line[i] == 44 )
 				{
-			//		cout<<"b"<<endl;
-
 					d.push_back(num);
 					num.clear();
 				}else if(i == line.size()-1)
 				{
 					num.push_back(line[i]);
-			//		cout<<"dd"<<endl;
 					d.push_back(num);
 					num.clear();
 					list.push_back(d);
@@ -119,7 +108,7 @@ void getData()
 }
 
 
-
+//Sort data 
 void sortDataList(DataList&  a)
 {
 	sort(a.begin(),a.end(),myfunction);
