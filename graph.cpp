@@ -56,33 +56,42 @@ void Node::sortEdge()
     sort(edge.begin(), edge.end(), edgeComp);
 }
 
+
 Graph::Graph(const string& n)
 {
 	name = n;
 }
 
-Graph::~Graph()
+Graph::Graph()
 {
-	vector<Edge *>::iterator itE;
-	for ( itE = edges.begin() ; itE != edges.end() ; itE++ )
-	{
-		delete (*itE);
-		(*itE) = 0;
-	}
-	
-	map<int, Node *>::iterator itN;
-	for ( itN = nodesMap.begin() ; itN != nodesMap.end() ; itN++ )
-	{
-		delete (*itN).second;
-		(*itN).second = 0;
-	}
-
-    vector<Node *>::iterator itN2;
-	for ( itN2 = nodes.begin() ; itN2 != nodes.end() ; itN2++ )
-	{
-		(*itN2) = 0;
-	}
+	name = "0";
 }
+
+Graph::~Graph();
+
+
+// Graph::~Graph()
+// {
+// 	vector<Edge *>::iterator itE;
+// 	for ( itE = edges.begin() ; itE != edges.end() ; itE++ )
+// 	{
+// 		delete (*itE);
+// 		(*itE) = 0;
+// 	}
+	
+// 	map<int, Node *>::iterator itN;
+// 	for ( itN = nodesMap.begin() ; itN != nodesMap.end() ; itN++ )
+// 	{
+// 		delete (*itN).second;
+// 		(*itN).second = 0;
+// 	}
+
+//     vector<Node *>::iterator itN2;
+// 	for ( itN2 = nodes.begin() ; itN2 != nodes.end() ; itN2++ )
+// 	{
+// 		(*itN2) = 0;
+// 	}
+// }
 		
 void Graph::addEdge(const int& v1, const int& v2)
 {

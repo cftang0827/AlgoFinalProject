@@ -36,6 +36,14 @@ class Node{
 		int id;
         int color;
 		bool traveled;
+		int left;
+		
+		int right;
+		
+		int top;
+		
+		int down;
+		
 		vector<Edge *> edge;
 		int f;
 		int d;
@@ -47,18 +55,19 @@ class Graph{
 
 	public:
 		Graph(const string& n);
+		Graph();
 		~Graph();
 		
-		void addEdge(const int& v1, const int& v2);
-		void sortEdgesOfNode();
-        void sortNodesByDegree();
-        void sortNodesByID();
-		void init();
-		Node * getNodeById(const int& id);
+		// void addEdge(const int& v1, const int& v2);
+		// void sortEdgesOfNode();
+        // void sortNodesByDegree();
+        // void sortNodesByID();
+		// void init();
+		// Node * getNodeById(const int& id);
 
-		map<int, Node *> nodesMap;
-        vector<Node *> nodes;
-		vector<Edge *> edges;
+		// map<int, Node *> nodesMap;
+        // vector<Node *> nodes;
+		// vector<Edge *> edges;
 		string name;
 };
 

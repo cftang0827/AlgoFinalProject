@@ -5,8 +5,10 @@
 #include <vector>
 #include <algorithm>
 #include <iomanip>
+#include "graph.h"
 
 using namespace std;
+
 typedef vector<string> Data;
 typedef vector<Data> DataList;
 
@@ -15,9 +17,12 @@ void getData();
 bool myfunction(Data, Data);
 void sortDataList(DataList& );
 void string2int(DataList& );
+void makeGraph(DataList& );
 
 DataList list;
 string alpha, beta, omega;
+vector<Graph*> graphArray;
+vector<Node*> nodeArray;
 
 int main()
 {
@@ -31,7 +36,7 @@ int main()
 		}
 		cout<<endl;
 	}
-
+	Graph a;
 	cout<<"alpha: "<<alpha<<endl;
 	cout<<"beta: "<<beta<<endl;
 	cout<<"omega: "<<omega<<endl; 
@@ -141,3 +146,26 @@ void string2int(DataList& a)
 		cout<<endl;
 	}
 }*/
+
+void makeNode(DataList& in)
+{
+	for(int i = 0; i< in.size(); i++)
+	{
+		Node* temp;
+		stringstream left1,down1,top1,right1;
+		int left2,down2,top2,right2;
+		left1<<in[i][0];
+		down1<<in[i][1];
+		top1<<in[i][3];
+		right1<<in[i][2];
+		left1>>left2;
+		down1>>down2;
+		right1>>right2;
+		top1>>top2;
+		temp->left = left2;
+		temp->down = down2;
+		temp->top = top2;
+		temp->right = right2;
+
+	}
+}
