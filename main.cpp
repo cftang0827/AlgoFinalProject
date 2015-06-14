@@ -147,7 +147,7 @@ int main()
 //get data from test.txt to DataList datastructure
 void getData()
 {
-    fstream fs ("..//iccad2015_input.case3" ,fstream::in);
+    fstream fs ("..//iccad2015_input.case1" ,fstream::in);
 	string line;
 	
 	while(getline(fs,line))
