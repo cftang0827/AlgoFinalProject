@@ -19,11 +19,8 @@ class Edge{
 	public:
 		Edge(Node *a, Node *b);
 		Node* node[2];
-
 		Node *getNeighbor(Node *n);
-
 		bool operator < (const Edge& rhs) const;
-
 };
 
 class Node{
@@ -40,7 +37,8 @@ class Node{
 		int right;
 		int top;	
 		int down;
-		
+        bool inTheGraph;
+        /*void initNode()*/;
 		vector<Edge *> edge;
 		int f;
 		int d;
@@ -56,12 +54,12 @@ class Graph{
 		~Graph();
 		
 		void addEdge(const int& v1, const int& v2);
+        void addEdge(Node* v1, Node* v2);
 		void sortEdgesOfNode();
         void sortNodesByDegree();
         void sortNodesByID();
 		void init();
 		Node * getNodeById(const int& id);
-
 		map<int, Node *> nodesMap;
         vector<Node *> nodes;
 		vector<Edge *> edges;

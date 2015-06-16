@@ -31,10 +31,13 @@ Node * Edge::getNeighbor(Node *n)
 }
 
 
+
+
 Node::Node(const int& i)
 {
 	id = i;
 	traveled = false;
+    inTheGraph = false;
     color = 0;
 	d = DIS_INF;
 	prev = 0;
@@ -61,13 +64,6 @@ Graph::Graph(const string& n)
 {
 	name = n;
 }
-
-// Graph::Graph()
-// {
-// 	name = "0";
-// }
-
-
 
 
 Graph::~Graph()
@@ -123,6 +119,36 @@ void Graph::addEdge(const int& v1, const int& v2)
 	b->edge.push_back(e);
 
 }
+
+void Graph::addEdge(Node* v1, Node* v2)
+{
+    Node *a, *b;
+    map<int, Node *>::iterator it = nodesMap.find(v1->id);
+    if ( it == nodesMap.end() )
+    {
+        nodesMap[v1->id] = v1;
+        nodes.push_back(v1);
+        v1->inTheGraph = true;
+    }
+
+    it = nodesMap.find(v2->id);
+    if ( it == nodesMap.end() )
+    {
+        nodesMap[v2->id] = v2;
+        nodes.push_back(v2);
+        v2->inTheGraph = true;
+    }
+
+    Edge *e = new Edge(v1, v2);
+    edges.push_back(e);
+
+    v1->edge.push_back(e);
+    v2->edge.push_back(e);
+
+}
+
+
+
 	
 void Graph::sortEdgesOfNode()
 {
