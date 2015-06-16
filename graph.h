@@ -38,7 +38,7 @@ class Node{
 		int top;	
 		int down;
         bool inTheGraph;
-        /*void initNode()*/;
+        /*void initNode()*/
 		vector<Edge *> edge;
 		int f;
 		int d;
@@ -52,7 +52,7 @@ class Graph{
 		Graph(const string& n);
 
 		~Graph();
-		
+        vector<CC *> connected;
 		void addEdge(const int& v1, const int& v2);
         void addEdge(Node* v1, Node* v2);
 		void sortEdgesOfNode();
@@ -65,5 +65,26 @@ class Graph{
 		vector<Edge *> edges;
 		string name;
 };
+
+//CC->Connected component
+class CC{
+
+    public:
+        CC(const string& n);
+
+        ~CC();
+
+        void addEdge(Node* v1, Node* v2);
+        void sortEdgesOfNode();
+        void sortNodesByDegree();
+        void sortNodesByID();
+        void init();
+        Node * getNodeById(const int& id);
+        map<int, Node *> nodesMap;
+        vector<Node *> nodes;
+        vector<Edge *> edges;
+        string name;
+};
+
 
 #endif

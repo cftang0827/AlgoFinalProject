@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
     ../graph.cpp \
-    ../main.cpp
+    ../main.cpp \
+    ../getpart.cpp \
+    ../dfs.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -14,5 +16,7 @@ DISTFILES += \
     ../test.txt
 
 HEADERS += \
-    ../graph.h
+    ../graph.h \
+    ../getpart.h \
+    ../dfs.h
 
