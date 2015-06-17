@@ -11,8 +11,8 @@ Graph* FINAL = new Graph("FINAL");
 
 void getData()
 {
-//    fstream fs ("..//iccad2015_input.case3" ,fstream::in);
-    fstream fs ("..//test.txt" ,fstream::in);
+    fstream fs ("..//iccad2015_input.case2" ,fstream::in);
+//    fstream fs ("..//test.txt" ,fstream::in);
 //    fstream fs ("test.txt" ,fstream::in);
     string line;
 

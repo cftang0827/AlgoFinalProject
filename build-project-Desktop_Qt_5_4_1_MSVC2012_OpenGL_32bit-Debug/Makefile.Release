@@ -160,8 +160,7 @@ release\getpart.obj: ..\getpart.cpp ..\getpart.h \
 		..\graph.h
 
 release\dfs.obj: ..\dfs.cpp ..\dfs.h \
-		..\graph.h \
-		..\getpart.h
+		..\graph.h
 
 ####### Install
 

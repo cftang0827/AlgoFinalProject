@@ -172,8 +172,7 @@ debug\getpart.obj: ..\getpart.cpp ..\getpart.h \
 		..\graph.h
 
 debug\dfs.obj: ..\dfs.cpp ..\dfs.h \
-		..\graph.h \
-		..\getpart.h
+		..\graph.h
 
 ####### Install
 

@@ -227,6 +227,7 @@ Node * Graph::getNodeById(const int& id)
 CC::CC(const string& n)
 {
     name = n;
+    colorable = false;
 }
 
 

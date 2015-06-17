@@ -13,6 +13,7 @@
 using namespace std;
 
 class Node;
+class CC;
 
 class Edge{
 
@@ -84,6 +85,7 @@ class CC{
         vector<Node *> nodes;
         vector<Edge *> edges;
         string name;
+        bool colorable;
 };
 
 

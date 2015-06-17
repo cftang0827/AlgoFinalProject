@@ -80,8 +80,19 @@ int main()
 
     //dfs
 
-
+    system("PAUSE");
     DFS(FINAL);
+
+
+
+    cout<<"FINAL->connected.size(): "<<FINAL->connected.size()<<endl;
+    cout<<"FINAL edge size: "<<FINAL->edges.size()<<endl;
+    cout<<"FINAL edge: "<<endl;
+    system("PAUSE");
+    for(int i = 0 ; i<FINAL->connected.size(); i++)
+    {
+        cout<<FINAL->connected[i]->nodes.size()<<endl;
+    }
 
 
 
