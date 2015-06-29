@@ -1,0 +1,6 @@
+To compile
+	make
+	cd bin
+	./final [input] [output]
+The report is in pdf format 
+If there is any question please call 0989191395
